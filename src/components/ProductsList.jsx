@@ -39,7 +39,7 @@ function ProductList() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Lista Prodotti</h2>
       <ul>
         {products.map((product, index) => (
@@ -58,16 +58,16 @@ function ProductList() {
           <ul>
             {addedProducts.map((item, index) => (
               <li key={index}>
-                <strong>{item.name}</strong> - € {item.price.toFixed(2)} × {item.quantity}
+                <strong>{item.name}</strong> -  {item.price.toFixed(2)} € × {item.quantity}
                 <button
-                  onClick={() => removeFromCart(item.name)}
+                  onClick={() => removeFromCart(item.name)}className="remove-button"
                 >
                   Rimuovi dal carrello
                 </button>
               </li>
             ))}
           </ul>
-          <h4>Totale:  {getTotal()}€</h4>
+          <h4>Totale:  {getTotal()}€</h4> 
         </>
       )}
     </div>
